@@ -1,0 +1,109 @@
+%\newcommand{\myauthor}{Marinos Bernitsas} 	%Fill in author
+%\newcommand{\mytitle}{Title}				%Fill in title
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\myfigure}[3]{
+\begin{center}
+	#3\\*
+\includegraphics[scale=#2]{#1}
+\end{center}
+}
+
+\newcommand{\myfiguren}[3]{
+%\includegraphics[width=#2\textwidth]{#1}
+
+%\includegraphics[\ifthenelse{\equal{#2}{f}} {width=\textwidth}{scale=#2} ]{#1}
+\begin{center}
+	\ifthenelse{\equal{#2}{f}} {\includegraphics[width=\textwidth]{\figuredir#1}}{\includegraphics[scale=#2]{\figuredir#1}}
+
+\nopagebreak[4] #3 %[\texttt{#1}]
+	
+\end{center}
+
+%\label{#1}
+
+}
+
+
+\newcommand{\mylisting}[2]{
+	\textbf{\texttt{#1}}
+\lstinputlisting[language=#2]{#1}
+}
+
+\newcommand{\simpletitle}{
+\begin{center}{\textbf{\Large \mytitle}}\end{center}
+}
+
+
+
+\documentclass[english,letterpaper, 11pt]{article}
+\usepackage{geometry}
+\geometry{verbose,letterpaper,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{datetime}
+\usepackage{lastpage}
+\usepackage[colorlinks=true, linkcolor=black, pdfauthor={\myauthor}, pdftitle={\mytitle}, pdffitwindow=true]{hyperref}
+%\usepackage{underscore}
+\usepackage{listings}
+\usepackage{courier}
+\usepackage{rotating}
+\usepackage[usenames]{color}
+%\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+%\usepackage[headings]{fullpage}
+%%\usepackage{indentfirst}%to indent the first paragraph ofa section
+%%\usepackage{lscape}
+\usepackage{amsmath, amssymb}
+%\usepackage{auto-greek}
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{setspace}
+\usepackage{eurosym}
+%%%%%%% DEBUG ALERT: NEW
+\usepackage[table]{xcolor}
+
+
+%%%%Math FNS%%%%%%%
+\newcommand{\ra}{\ensuremath{\Rightarrow}}
+\newcommand{\la}{\ensuremath{\Leftarrow}}
+\newcommand{\da}{\ensuremath{\downarrow}}
+\newcommand{\ua}{\ensuremath{\uparrow}}
+\newcommand{\rra}{\ensuremath{\rightarrow}}
+
+%\renewcommand{\alpha}{\ensuremath{\alpha}}
+%\renewcommand{\beta}{\ensuremath{\beta}}
+
+
+\newcommand{\degreesf}{\ensuremath{^\circ}F}
+\newcommand{\qed}{\hfill \ensuremath{\Box}}
+
+
+%%%%%%%%%%%%%%%%%%%%%
+
+\lstset{ 
+language=Verilog,   
+basicstyle=\footnotesize\ttfamily,
+numbers=left,
+numberstyle=\scriptsize,  
+showstringspaces=false,
+postbreak=\space, breakindent=5pt, breaklines,
+frame=single,
+morecomment=[is]{/*}{*/},
+numberblanklines=false
+}
+
+\lhead{\myauthor}
+\chead{}
+\rhead{\today}
+\cfoot{\thepage\ of \pageref{LastPage}}
+\parindent=0in
+%\setcounter{secnumdepth}{0}
+\mmddyyyydate
+
+\title{\mytitle}
+\author{\myauthor}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
