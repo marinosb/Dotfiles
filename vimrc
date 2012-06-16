@@ -1,5 +1,3 @@
-
-
 ":syntax enable
 ":set hidden
 ":set insearch
@@ -10,8 +8,8 @@
 
 set nocompatible                  " Must come first because it changes other options.
 
-syntax enable                     " Turn on syntax highlighting.
-filetype plugin indent on         " Turn on file type detection.
+"syntax enable                     " Turn on syntax highlighting.
+"filetype plugin indent on         " Turn on file type detection.
 
 "runtime macros/matchit.vim        " Load the matchit plugin.
 
@@ -65,7 +63,16 @@ set nowrap
 
 map <F1> :let @*=expand("%:p")<CR>
 
-
+" Tab mappings.
+map <leader>tt :tabnew<cr>
+map <leader>te :tabedit
+map <leader>tc :tabclose<cr>
+map <leader>to :tabonly<cr>
+map <leader>tn :tabnext<cr>
+map <leader>tp :tabprevious<cr>
+map <leader>tf :tabfirst<cr>
+map <leader>tl :tablast<cr>
+map <leader>tm :tabmove
 
 
 
