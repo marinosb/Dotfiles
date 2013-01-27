@@ -1,0 +1,2 @@
+# Combine pdfs in OSX
+'/System/Library/Automator/Combine PDF Pages.action/Contents/Resources/join.py' -o combined.pdf 1.pdf 2.pdf  3.pdf 
