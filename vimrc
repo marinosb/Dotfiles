@@ -8,11 +8,14 @@
 
 set nocompatible                  " Must come first because it changes other options.
 
-"syntax enable                     " Turn on syntax highlighting.
-"filetype plugin indent on         " Turn on file type detection.
+syntax enable                     " Turn on syntax highlighting.
+filetype plugin indent on         " Turn on file type detection.
 
 "runtime macros/matchit.vim        " Load the matchit plugin.
 
+let mapleader=","
+map <Leader>y "*y
+map <Leader>d "*d
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
 
@@ -59,9 +62,9 @@ set ruler
 set number           
  
 set hls              
-set nowrap
 
 map <F1> :let @*=expand("%:p")<CR>
+nmap ; :
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
@@ -111,3 +114,4 @@ map <leader>tm :tabmove
 "zt - put this line at the 't'op of the screen
 "zb - put this line at the 'b'ottom of the screen
 "zz - put this line at the middle of the screen
+"test

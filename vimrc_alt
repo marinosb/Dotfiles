@@ -1,0 +1,125 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+ 
+set nocompatible            " Prevents emulating vi's limitations
+set lines=200 columns=200    " Set initial window width/height
+filetype indent plugin on   " Filetype indent plugin on
+set modeline                " Allows 'modeline'
+ 
+set guifont=Consolas:h10.2:cANSI "use the consolas font
+ 
+set mouse=a                 " Utilize mouse in all modes, Middle mouse button will paste!
+set mousefocus              " Use the mouse to focus windows
+ 
+set wrap
+ 
+syntax on                   " Set syntax on
+set background=dark         " Let vim know that the background is dark
+highlight Normal     guifg=gray guibg=black
+ 
+set undolevels=1000         " Set undo commands to 1000
+ 
+set autoindent              " Automatic indenting
+set smartindent             " Guess indent level based on the previous line
+ 
+set tabstop=3               " Sets tabs to 4 spaces
+set shiftwidth=3            " Sets the indent shift to 4 spaces
+set expandtab               " All new tab characters are spaces
+set softtabstop=3           " How many columns to use when Tab is hit in insert                                       mode
+ 
+set ruler                   " Display a ruler
+set number                  " Display line numbers
+ 
+set hls                   " Don't highlight search patterns
+ 
+set showcmd                       " Display incomplete commands.
+set showmode                      " Display the mode you're in.
+ 
+set backspace=indent,eol,start    " Intuitive backspacing.
+ 
+set hidden                        " Handle multiple buffers better.
+ 
+set wildmenu                      " Enhanced command line completion.
+set wildmode=list:longest         " Complete files like a shell.
+ 
+set ignorecase                    " Case-insensitive searching.
+set smartcase                     " But case-sensitive if expression contains a capital letter.
+ 
+" Configure statusline display
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+"set statusline=Filename\:\ %t\ [%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%                                      c,%l/%L\ %P
+set laststatus=2                  " Show the status line all the time
+ 
+set backspace=2             " Make backspace work like most other applications
+ 
+"set incsearch              EXPERIMENTAL: incremental search
+set cindent                "EXPERIMENTAL: C-style indentations
+ 
+"set clipboard=unnamed
+ 
+set scrolloff=6
+ 
+set title                         " Set the terminal's title
+ 
+set visualbell                    " No beeping.
+ 
+set ignorecase              "allows case-insensitive searches
+ 
+nmap ; :
+"this overwrites the semicolon functionality which is to repeat the last f or t command
+ 
+let mapleader = ","
+ 
+map <leader>y "*y
+map <leader>p "*p
+map <leader>P "*P
+ 
+highlight MyExceptions guifg=red
+syntax match MyExceptions /\c.*\(exception\|error\).*/
+ 
+" Perforce
+map <F1> :!p4 add %
+map <F2> :!p4 edit %
+map <F3> :!p4 diff %
+map <F10> :exec ":e " . expand("%:r") . (expand("%") =~ "\.h$" ? ".cpp" : ".h") <CR>
+map <F6> :w <CR> :!./build <CR>
+"map <F5> :!./run_live <CR>
+"map <F4> :!./run_batch <CR>
+map <F11> /\(error\)\\|\(exception\)<CR>
+ 
+"copy the full path to the clipboard
+map <F12> :let @*=expand("%:p")<CR>
+map <F5> :e!<CR>
+ 
+set nobackup
+set nowritebackup
+set noswapfile
+"set nobackup                      " Don't make a backup before overwriting a file.
+"set nowritebackup                 " And again.
+"set directory=c:/users/bernitsa/.vim/tmp//,.  " Keep swap files in one location
+ 
+" Tab mappings.
+map <leader>tt :tabnew<cr>
+map <leader>te :tabedit
+map <leader>tc :tabclose<cr>
+map <leader>to :tabonly<cr>
+map <leader>tn :tabnext<cr>
+map <leader>tp :tabprevious<cr>
+map <leader>tf :tabfirst<cr>
+map <leader>tl :tablast<cr>
+map <leader>tm :tabmove
+ 
+ 
+ 
+"set guioptions+=lrbmTLce
+"set guioptions-=lrbmTLce
+set guioptions+=c
+set selectmode-=mouse
+ 
+:map <MiddleMouse> <Nop>
+:imap <MiddleMouse> <Nop>
+ 
+"Always use very magic
+":nnoremap / /\v
+" Useful Tips: http://www.oualline.com/vim/10/top_10.html
